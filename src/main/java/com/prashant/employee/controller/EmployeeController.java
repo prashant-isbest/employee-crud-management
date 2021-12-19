@@ -11,7 +11,6 @@ import com.prashant.employee.model.ErrorModel;
 import com.prashant.employee.service.EmployeeService;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -54,9 +53,7 @@ public class EmployeeController {
 	@DeleteMapping({ "employee/{employeeId}" })
 	public ResponseEntity<String> deleteEmployee(@PathVariable("employeeId") Long employeeId) {
 		employeeService.deleteEmployee(employeeId);
-		HttpHeaders headers = new HttpHeaders();
-		headers.add("Content-Type", "text");
-		return new ResponseEntity<>("Employee deleted succesfully", headers, HttpStatus.OK);
+		return new ResponseEntity<>("Employee deleted succesfully", HttpStatus.OK);
 	}
 
 	@PutMapping({ "/{employeeId}" })

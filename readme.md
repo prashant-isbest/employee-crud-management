@@ -1,0 +1,1 @@
+Swagger UI can be accessed here http://localhost:8080/swagger-ui.html#/
